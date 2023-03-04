@@ -12,6 +12,7 @@ public class JohnMovimiento : MonoBehaviour
     private Animator Animator;
     private float Horizontal;
     private bool Grounded;
+    private float LastShoot;
 
     void Start()
     {
@@ -42,9 +43,10 @@ else Grounded = false;
             Jump();
         }
 
-        if(Input.GetKey(KeyCode.Space))
+        if(Input.GetKey(KeyCode.Space)  && Time.time  > LastShoot + 0.25f)
         {
             Shoot();
+            LastShoot = Time.time;
         }
     }
     private void Jump()
@@ -59,8 +61,8 @@ else Grounded = false;
      if (transform.localScale.x == 1.0f) direction = Vector2.right;
      else direction = Vector3.left;
 
-        //GameObject bullet = Instantiate(BulletPrefab, transform.position + direction * 0.1f, Quaternion.Identity);
-        //bullet.GetComponent<BulletScript>().SetDirection(direction);
+        GameObject bullet = Instantiate(BulletPrefab, transform.position + direction * 0.1f, Quaternion.identity);
+        bullet.GetComponent<BulletScript>().SetDirection(direction);
     }
 
     private void FixedUpdate()

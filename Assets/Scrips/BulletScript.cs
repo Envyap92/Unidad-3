@@ -31,4 +31,9 @@ public void SetDirection(Vector2 direction)
     {
         
     }
+
+    public void DestroyBullet()
+    {
+        Destroy(gameObject);
+    }
 }
