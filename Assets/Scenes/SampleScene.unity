@@ -10884,8 +10884,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 523284393474474627, guid: 5b53b3e65309c3543b0b4282cf0ec831, type: 3}
-  Speed: 0
-  JumpForce: 0
+  Speed: 1
+  JumpForce: 150
 --- !u!95 &382087240
 Animator:
   serializedVersion: 5
